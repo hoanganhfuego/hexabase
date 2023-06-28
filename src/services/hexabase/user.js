@@ -9,6 +9,15 @@ const login = async (email, password) => {
   return result.data.token;
 };
 
+const register = async (email, password) => {
+  const params = {
+    email,
+    password
+  };
+  const result = await axios.post(`${process.env.VUE_APP_HEXABAESE_API_URL}/users/registration/confirm`, params);
+  return result.data
+}
+
 const logout = async () => {
   await axios.post(`${process.env.VUE_APP_HEXABAESE_API_URL}/users/logout`);
 };
@@ -22,4 +31,5 @@ export default {
   login: login,
   logout: logout,
   getUserInfo: getUserInfo,
+  register: register
 };

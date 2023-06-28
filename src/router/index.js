@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import store from "@/store";
 import Login from "@/views/Login.vue";
 import Home from "@/views/Home.vue";
+import Register from "@/views/Register.vue";
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,11 @@ const routes = [
     name: "home",
     component: Home,
     meta: { requiresAuth: true },
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: Register,
   },
 ];
 
